@@ -1,0 +1,21 @@
+.form--quiz {
+    display: flex;
+    justify-content: space-around;
+}
+
+.inputQuiz--container {
+    margin: 20px !important;
+}
+
+.form--quiz-button {
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.form--quiz-button:hover {
+    transition: 500ms;
+    background-color: rgb(164, 164, 164);
+}

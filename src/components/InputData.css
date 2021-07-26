@@ -1,0 +1,50 @@
+.form {
+    display: grid;
+    margin-top: 30px;
+}
+
+.form--btn {
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(186, 186, 186);
+    border: 1px solid gray;
+}
+
+button:disabled {
+    transition: 1s;
+    cursor: not-allowed;
+}
+
+.form--error {
+    color: rgb(35, 144, 35);
+    font-weight: bold;
+}
+
+.form--container {
+    height: 80px;
+}
+
+.form__p--success {
+    transition:1s; 
+    width: 200px !important;
+    position: absolute !important;
+    text-align: center;
+    background-color: rgba(0, 128, 0, 0.36) !important;
+    color: black;
+    font-weight: bold;
+    left: 41%;
+}
+
+.form__p--none {
+    transition:1s; 
+    width: 200px !important;
+    position: absolute !important;
+    text-align: center;
+    background-color: rgba(0, 128, 0, 0) !important;
+    color: transparent ;
+    font-weight: bold;
+    left: 41%;
+}

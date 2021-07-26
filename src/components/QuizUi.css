@@ -1,0 +1,11 @@
+.card-questions {
+    padding: 15px;
+    height: 400px;
+}
+
+.card-preplay {
+    background-color: rgba(129, 194, 142, 0.653) !important;
+    font-weight: bold;
+    text-align: center;
+    width: 200px !important;
+}
