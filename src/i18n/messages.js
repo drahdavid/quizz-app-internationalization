@@ -1,6 +1,7 @@
 export const allMessages = {
     'es-AR': {
-        'inputquiz.title': 'Selecciona una categoría para comenzar a jugar'
+        'inputquiz.title': 'Selecciona una categoría para comenzar a jugar',
+        'inputquiz.button': 'Enviar'
         ,
         // INPUT-DATA
         'inputdata.cat': 'Categoría'
@@ -45,6 +46,8 @@ export const allMessages = {
 
     'en-US': {
         'inputquiz.title': 'Select Quiz Categories to start Playing'
+        ,
+        'inputquiz.button': 'Submit'
         ,
         // INPUT-DATA
         'inputdata.cat': 'Category'
