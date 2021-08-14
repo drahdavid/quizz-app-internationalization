@@ -1,4 +1,5 @@
-import './InputData.css';
+import './InputData.scss';
+
 import data from '../data/data';
 import DataValidation from '../validation/DataValidation';
 import { useState } from 'react';
@@ -57,7 +58,8 @@ const InputData = ({ arrData, setArrData }) => {
 
     return (
         <form onSubmit={handleSubmit} className="form semantic ui container">
-            <p className={`${successData ? 'ui container segment form__p--success' : 'form__p--none'}`}>SUCCESFULLY SENT</p>
+            <p className={`${successData ? 'ui container segment form__p--success' : 'form__p--none'}`} id='successMessage'>SUCCESFULLY SENT</p>
+
             <div className={"form--container"}>
                 <label htmlFor="category">Category</label>
                 <select name="category" id="category">
@@ -72,28 +74,31 @@ const InputData = ({ arrData, setArrData }) => {
 
             <div className={"form--container"}>
                 <label htmlFor="question">Question</label>
-                <input value={questionInput} onChange={questionHandler} type="text" id="question" name="question" />
+                <input className={!questionIsValid ? 'input-not-ok' : 'input-ok'} aria-invalid={!questionIsValid} value={questionInput} onChange={questionHandler} type="text" id="question" name="question" />
                 {!questionIsValid && < p className={"form--error"}>- Question should include "?".</p>}
             </div>
 
 
             <div className={"form--container"} >
                 <label htmlFor="answer">Answer</label>
-                <input value={answerInput} onChange={answerHandler} type="text" id="answer" name="answer" />
+                <input className={!answerIsValid ? 'input-not-ok' : 'input-ok'} aria-invalid={!answerIsValid} value={answerInput} onChange={answerHandler} type="text" id="answer" name="answer" />
                 {!answerIsValid && < p className={"form--error"}>- Answer should be at least 5 characters.</p>}
             </div>
 
             <div className={"form--container"}>
                 <label htmlFor="level">Difficulty Level</label>
-                <input value={levelInput} onChange={levelHandler} min="1" max="3" type="number" id="level" name="level" />
+                <input className={!levelIsValid ? 'input-not-ok' : 'input-ok'} aria-invalid={!levelIsValid} value={levelInput} onChange={levelHandler} min="1" max="3" type="number" id="level" name="level" />
                 {!levelIsValid && < p className={"form--error"}>- Level 1, 2 or 3 (easy, medium or difficult). </p>}
             </div>
 
-            <button disabled={!formValidation} className="form--btn" >
+            <button aria-describedby="successMessage" disabled={!formValidation} className="form--btn" >
                 Submit
             </button>
 
+
         </form >
+
+
     )
 
 };
