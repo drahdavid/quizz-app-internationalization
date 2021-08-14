@@ -39,6 +39,8 @@ export const allMessages = {
         'quizui.respuesta': 'Respuestas'
         ,
         'quizui.nivel': 'Nivel de Dificultad'
+        ,
+        'button.lenguaje': 'Cambiar Lenguaje'
     },
 
     'en-US': {
@@ -81,5 +83,7 @@ export const allMessages = {
         'quizui.respuesta': 'Answer'
         ,
         'quizui.nivel': 'Difficulty Level'
+        ,
+        'button.lenguaje': 'Change Language'
     }
 };

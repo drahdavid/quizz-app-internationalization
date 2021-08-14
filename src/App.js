@@ -5,12 +5,15 @@ import { allMessages } from './i18n/messages';
 import InputData from './components/InputData';
 import InputQuiz from './components/InputQuiz';
 import QuizUi from './components/QuizUi';
-import { FormattedMessage } from 'react-intl';
+import Button from './UI/Button';
+
 
 function App() {
-
-  const currentLocale = 'es-AR';
+  const [language, setLanguage] = useState('es-AR');
+  const currentLocale = language;
   const messages = allMessages[currentLocale];
+
+
 
   const [arrData, setArrData] = useState([
     { category: "cine", question: "Who directed Reservoir Dogs? ", answer: "Quentin Tarantino", level: "1" },
@@ -26,7 +29,9 @@ function App() {
 
   return (
     <IntlProvider locale={currentLocale} messages={messages}>
+
       <div className="App">
+        <Button setLanguage={setLanguage} language={language}></Button>
         <InputData
           arrData={arrData}
           setArrData={setArrData}>
