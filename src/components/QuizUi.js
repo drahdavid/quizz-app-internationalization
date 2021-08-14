@@ -1,4 +1,5 @@
-import './QuizUi.css';
+import './QuizUi.scss';
+import { FormattedMessage } from 'react-intl';
 import { useState } from 'react';
 const QuizUi = ({ filteredQuestions }) => {
 
@@ -32,22 +33,33 @@ const QuizUi = ({ filteredQuestions }) => {
                                 <table className="ui definition table">
                                     <tbody>
                                         <tr>
-                                            <td className="two wide column">Category</td>
+                                            <FormattedMessage id="quizui.cat">
+                                                {message => <td className="two wide column">{message}</td>}
+                                            </FormattedMessage>
                                             <td>{el.category.toUpperCase()}</td>
                                         </tr>
                                         <tr>
-                                            <td>Question</td>
+                                            <FormattedMessage id="quizui.pregunta">
+                                                {message => <td className="two wide column">{message}</td>}
+                                            </FormattedMessage>
+
                                             <td>{el.question}</td>
                                         </tr>
                                         <tr>
-                                            <td>Answer</td>
+                                            <FormattedMessage id="quizui.respuesta">
+                                                {message => <td className="two wide column">{message}</td>}
+                                            </FormattedMessage>
+
                                             <td>
                                                 {!showAnswer ? <input onFocus={() => setAnwering(true)} type="text"></input> : <p>{el.answer}</p>}
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Difficulty Level</td>
-                                            <td>{el.level}{el.level === '1' ? '-Easy' : '' || el.level === '2' ? '-Medium' : '-Hard'}</td>
+                                            <FormattedMessage id="quizui.nivel">
+                                                {message => <td className="two wide column">{message}</td>}
+                                            </FormattedMessage>
+
+                                            <td>{el.level}</td>
                                         </tr>
 
                                     </tbody>

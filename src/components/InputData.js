@@ -1,5 +1,5 @@
 import './InputData.scss';
-
+import { FormattedMessage } from 'react-intl';
 import data from '../data/data';
 import DataValidation from '../validation/DataValidation';
 import { useState } from 'react';
@@ -61,39 +61,79 @@ const InputData = ({ arrData, setArrData }) => {
             <p className={`${successData ? 'ui container segment form__p--success' : 'form__p--none'}`} id='successMessage'>SUCCESFULLY SENT</p>
 
             <div className={"form--container"}>
-                <label htmlFor="category">Category</label>
+                <FormattedMessage id="inputdata.cat">
+                    {message => <label htmlFor="category">{message}</label>}
+                </FormattedMessage>
+
                 <select name="category" id="category">
-                    <option value="cinema">Cinema</option>
-                    <option value="history">History</option>
-                    <option value="general-culture">General Culture</option>
-                    <option value="music">Music</option>
-                    <option value="geography">Geography</option>
-                    <option value="other">Other</option>
+                    <FormattedMessage id="inputdata.cine">
+                        {message => <option value='cine'>{message}</option>}
+                    </FormattedMessage>
+
+                    <FormattedMessage id="inputdata.historia">
+                        {message => <option value='historia'>{message}</option >}
+                    </FormattedMessage>
+
+                    <FormattedMessage id="inputdata.cultura">
+                        {message => <option value='cultura'>{message}</option >}
+                    </FormattedMessage>
+
+                    <FormattedMessage id="inputdata.musica">
+                        {message => <option value='musica'>{message}</option >}
+                    </FormattedMessage>
+
+                    <FormattedMessage id="inputdata.geo">
+                        {message => <option value='geografia'>{message}</option >}
+                    </FormattedMessage>
+
+                    <FormattedMessage id="inputdata.otros">
+                        {message => <option value='otros'>{message}</option >}
+                    </FormattedMessage>
+
                 </select>
             </div>
 
             <div className={"form--container"}>
-                <label htmlFor="question">Question</label>
+                <FormattedMessage id="inputdata.pregunta">
+                    {message => <label htmlFor="question">{message}</label>}
+                </FormattedMessage>
                 <input className={!questionIsValid ? 'input-not-ok' : 'input-ok'} aria-invalid={!questionIsValid} value={questionInput} onChange={questionHandler} type="text" id="question" name="question" />
-                {!questionIsValid && < p className={"form--error"}>- Question should include "?".</p>}
+                {!questionIsValid && <FormattedMessage id="inputdata.error-pregunta">
+                    {message => <p className="form--error">{message}</p>}
+                </FormattedMessage>}
             </div>
 
 
             <div className={"form--container"} >
-                <label htmlFor="answer">Answer</label>
+                <FormattedMessage id="inputdata.respuesta">
+                    {message => <label htmlFor="answer">{message}</label>}
+                </FormattedMessage>
+
                 <input className={!answerIsValid ? 'input-not-ok' : 'input-ok'} aria-invalid={!answerIsValid} value={answerInput} onChange={answerHandler} type="text" id="answer" name="answer" />
-                {!answerIsValid && < p className={"form--error"}>- Answer should be at least 5 characters.</p>}
+                {!answerIsValid &&
+                    <FormattedMessage id="inputdata.error-respuesta">
+                        {message => <p className="form--error">{message}</p>}
+                    </FormattedMessage>}
+
+
             </div>
 
             <div className={"form--container"}>
-                <label htmlFor="level">Difficulty Level</label>
+                <FormattedMessage id="inputdata.nivel">
+                    {message => <label htmlFor="level">{message}</label>}
+                </FormattedMessage>
+
                 <input className={!levelIsValid ? 'input-not-ok' : 'input-ok'} aria-invalid={!levelIsValid} value={levelInput} onChange={levelHandler} min="1" max="3" type="number" id="level" name="level" />
-                {!levelIsValid && < p className={"form--error"}>- Level 1, 2 or 3 (easy, medium or difficult). </p>}
+                {!levelIsValid &&
+                    <FormattedMessage id="inputdata.error-nivel">
+                        {message => <p className="form--error">{message}</p>}
+                    </FormattedMessage>}
             </div>
 
-            <button aria-describedby="successMessage" disabled={!formValidation} className="form--btn" >
-                Submit
-            </button>
+            <FormattedMessage id="inputdata.boton-enviar">
+                {message => <button aria-describedby="successMessage" disabled={!formValidation} className="form--btn">{message}</button>}
+            </FormattedMessage>
+
 
 
         </form >

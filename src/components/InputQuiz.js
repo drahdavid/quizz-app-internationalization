@@ -1,5 +1,5 @@
-import './InputQuiz.css';
-
+import './InputQuiz.scss';
+import { FormattedMessage } from 'react-intl';
 import quizData from '../data/quizData';
 import questionFilter from '../data/questionsFilter';
 
@@ -21,7 +21,9 @@ const InputQuiz = ({ arrData, setFilteredQuestions }) => {
     return (
         <div className="ui segment">
             <form onSubmit={handleSubmit}>
-                <h4 className="ui dividing header">Select Quiz Categories to start Playing</h4>
+                <FormattedMessage id="inputquiz.title">
+                    {message => <h4>{message}</h4>}
+                </FormattedMessage>
                 <div className="form--quiz">
                     {categories.map((el, i) =>
                         <div key={i}>
