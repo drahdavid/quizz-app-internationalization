@@ -45,6 +45,8 @@ function App() {
         <QuizUi filteredQuestions={filteredQuestions}>
         </QuizUi>
       </div >
+
+      
     </IntlProvider>
   );
 }

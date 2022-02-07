@@ -35,7 +35,7 @@ const InputQuiz = ({ arrData, setFilteredQuestions }) => {
                 <FormattedMessage id="inputquiz.button">
                     {message => <button className="form--quiz-button">{message}</button>}
                 </FormattedMessage>
-            
+
             </form>
 
         </div >
